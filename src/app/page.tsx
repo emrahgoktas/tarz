@@ -33,7 +33,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/75 to-dark/35 sm:bg-gradient-to-r sm:from-dark sm:via-dark/75 sm:to-dark/25" />
         <div className="relative mx-auto w-full max-w-6xl px-5 pb-16 pt-28 sm:px-6 sm:pb-20">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
-            Tarz Yapı · Pendik
+            TARZ CAM BALKON
           </p>
           <h1 className="mt-4 max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
             Cam balkon ve doğramada net teklif, temiz montaj

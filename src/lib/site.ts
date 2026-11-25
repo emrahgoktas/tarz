@@ -23,6 +23,8 @@ export const site = {
   },
   hours: "Her gün 09:00–18:00",
   opening: { opens: "09:00", closes: "18:00" },
+  /** Ayazma Caddesi, Çınardere Mahallesi, Pendik. */
+  geo: { latitude: 40.8981863, longitude: 29.243203 },
 } as const;
 
 export const nav = [
@@ -43,7 +45,16 @@ export function mapQuery() {
 }
 
 export function mapEmbedSrc() {
-  return `https://maps.google.com/maps?q=${encodeURIComponent(mapQuery())}&hl=tr&z=16&output=embed`;
+  const { latitude, longitude } = site.geo;
+  const padLat = 0.006;
+  const padLon = 0.01;
+  const bbox = [
+    longitude - padLon,
+    latitude - padLat,
+    longitude + padLon,
+    latitude + padLat,
+  ].join(",");
+  return `https://www.openstreetmap.org/export/embed.html?bbox=${encodeURIComponent(bbox)}&layer=mapnik&marker=${latitude},${longitude}`;
 }
 
 export function mapDirectionsHref() {
